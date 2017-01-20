@@ -1,0 +1,115 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorOrange</item>
+        <item name="colorPrimaryDark">@color/colorOrange</item>
+        <item name="colorAccent">@color/colorOrange</item>
+        <item name="android:actionMenuTextColor">@color/colorOrange</item>
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:colorPrimary">@color/colorOrange</item>
+        <item name="android:colorPrimaryDark">@color/colorOrange</item>
+        <item name="android:colorAccent">@color/colorOrange</item>
+        <item name="itemTextColor">@color/colorOrange</item>
+        <item name="itemIconTint">@color/colorOrange</item>
+        <item name="android:buttonTint">@color/colorOrange</item>
+        <item name="android:listSelector">@color/colorOrange</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorOrange</item>
+        <item name="android:textColorSecondary">@color/colorOrange</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="OrangeDialogStyle" parent="@android:style/Theme.DeviceDefault.Dialog">
+        <item name="android:bottomBright">@color/colorBackgroundDarker</item>
+        <item name="android:bottomDark">@color/colorBackgroundDarker</item>
+        <item name="android:bottomMedium">@color/colorBackgroundDarker</item>
+        <item name="android:centerBright">@color/colorBackgroundDarker</item>
+        <item name="android:centerDark">@color/colorBackgroundDarker</item>
+        <item name="android:centerMedium">@color/colorBackgroundDarker</item>
+        <item name="android:fullBright">@color/colorBackgroundDarker</item>
+        <item name="android:fullDark">@color/colorBackgroundDarker</item>
+        <item name="android:topBright">@color/colorBackgroundDarker</item>
+        <item name="android:topDark">@color/colorBackgroundDarker</item>
+        <item name="android:textColorTertiary">@color/colorOrange</item>
+        <item name="android:textColorHint">@color/colorOrange</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:textColorPrimary">@color/colorOrange</item>
+        <item name="android:textColorSecondary">@color/colorOrange</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.Design.NavigationView.Dark">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="DarkOrange">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="colorPrimary">@color/colorOrange</item>
+        <item name="colorPrimaryDark">@color/colorOrange</item>
+        <item name="colorAccent">@color/colorOrange</item>
+        <item name="itemTextColor">@color/colorOrange</item>
+        <item name="itemIconTint">@color/colorOrange</item>
+    </style>
+    <style name="WebViewOrange">
+        <item name="android:background">@color/colorForegroundLighter</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:colorPrimary">@color/colorOrange</item>
+        <item name="android:colorPrimaryDark">@color/colorOrange</item>
+        <item name="android:colorAccent">@color/colorOrange</item>
+        <item name="android:buttonTint">@color/colorOrange</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorOrange</item>
+        <item name="android:textColorSecondary">@color/colorOrange</item>
+    </style>
+    <style name="Parchment">
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="android:background">@color/colorParchment</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="DarkOrangeList">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="colorPrimary">@color/colorOrange</item>
+        <item name="colorPrimaryDark">@color/colorOrange</item>
+        <item name="colorAccent">@color/colorOrange</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">sample</item>
+        <item name="android:layout_margin">4dip</item>
+        <item name="android:layout_x">4dp</item>
+        <item name="android:layout_y">4dp</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:background">@drawable/background</item>
+        <item name="android:scrollbarSize">30dp</item>
+        <item name="android:scrollbarThumbVertical">@drawable/custom_scroll</item>
+    </style>
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorOrange</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:colorPrimary">@color/colorOrange</item>
+        <item name="android:colorPrimaryDark">@color/colorOrange</item>
+        <item name="android:colorAccent">@color/colorOrange</item>
+        <item name="itemTextColor">@color/colorOrange</item>
+        <item name="itemIconTint">@color/colorOrange</item>
+        <item name="android:buttonTint">@color/colorOrange</item>
+        <item name="android:listSelector">@color/colorOrange</item>
+        <item name="android:textColorSecondary">@color/colorOrange</item>
+    </style>
+</resources>

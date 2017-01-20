@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:theme="@style/DarkOrange"
+    android:backgroundTintMode="src_over"
+    style="@style/DarkOrange"
+    tools:ignore="UnusedAttribute">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/DarkOrange" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
+        style="@style/Widget.Design.NavigationView.Dark"
+        app:insetForeground="@android:color/transparent"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:backgroundTintMode="src_over"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Menu"
+        android:foregroundTint="@android:color/transparent"
+        android:foregroundTintMode="src_over"
+        android:theme="@style/DarkOrange"
+        app:itemBackground="@android:color/transparent"
+        app:itemIconTint="@color/colorForeground" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.kittleapps.runescapecompanionapi.MainActivity"
+    android:theme="@style/DarkOrange"
+    app:statusBarBackground="@android:color/transparent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/DarkOrange"
+        android:background="@android:color/transparent"
+        android:textAlignment="gravity"
+        android:gravity="center_vertical|center_horizontal|center">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/colorOrange"
+            android:background="@android:color/transparent"
+            android:backgroundTintMode="src_over"
+            android:textAlignment="gravity"
+            android:theme="@style/ToolbarColoredBackArrow"
+            android:gravity="center_vertical|center_horizontal" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main"
+        style="@style/DarkOrange" />
+
+</android.support.design.widget.CoordinatorLayout>

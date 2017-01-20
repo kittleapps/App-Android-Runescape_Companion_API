@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_CompanionApp"
+            android:icon="@mipmap/notification"
+            android:title="@string/app_CompanionAppTitle_String"/>
+        <item
+            android:id="@+id/nav_Solomons"
+            android:title="@string/app_SolomonsTitle_String"
+            android:icon="@mipmap/notification" />
+        <item android:title="@string/app_CharacterInformationTitle_String"
+            android:id="@+id/nav_CharacterInformation"
+            android:icon="@mipmap/notification" />
+        <item android:title="@string/app_CharacterRSSFeedTitle_String"
+            android:id="@+id/nav_CharacterRSSFeed"
+            android:icon="@mipmap/notification" />
+        <item android:title="@string/app_RecentRS3NewsRSSFeedTitle_String"
+            android:id="@+id/nav_RecentRS3NewsRSSFeed"
+            android:icon="@mipmap/notification"/>
+        <item android:title="@string/app_RecentOSRSNewsRSSFeedTitle_String"
+            android:id="@+id/nav_RecentOSRSNewsRSSFeed"
+            android:icon="@mipmap/notification"/>
+        <item android:title="@string/app_GoogleAuthenticator_String"
+            android:id="@+id/nav_GoogleAuthenticator"
+            android:icon="@android:drawable/ic_secure" />
+        <item android:title="@string/app_Logout_String"
+            android:id="@+id/nav_Logout"
+            android:icon="@android:drawable/ic_lock_power_off" />
+    </group>
+
+</menu>

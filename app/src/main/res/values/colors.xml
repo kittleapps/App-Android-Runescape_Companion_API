@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBackground">#0d252f</color>
+    <color name="colorForeground">#445c64</color>
+    <color name="colorBackgroundDarker">#0d1e25</color>
+    <color name="colorForegroundLighter">#496974</color>
+    <color name="colorParchment">#efddb9</color>
+    <color name="colorOrange">#fea520</color>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:theme="@style/DarkOrange"
+    android:weightSum="1"
+    android:layout_height="165dp"
+    android:layout_width="match_parent"
+    style="@style/DarkOrange"
+    android:gravity="top"
+    android:elevation="1dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="1dp"
+    tools:ignore="UnusedAttribute">
+
+    <ImageView
+        android:layout_height="48dp"
+        app:srcCompat="@mipmap/rs_companion_logo_web"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/unofficial_warning"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textAlignment="gravity"
+        android:textStyle="normal|italic"
+        android:autoLink="none"
+        android:editable="false"
+        android:textAllCaps="false"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:layout_weight="0.60"
+        android:background="@android:color/transparent"
+        android:theme="@style/DarkOrange"
+        android:autoText="false"
+        android:textSize="10sp"
+        android:paddingBottom="40dp"
+        android:paddingTop="2dp" />
+
+</LinearLayout>

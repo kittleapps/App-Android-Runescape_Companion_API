@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RS Companion API</string>
+    <string name="app_name_short">RS API</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+   <string name="unofficial_warning">All the media contained on this unofficial (3rd party) application including graphics, icons, still and moving images, and Website Data are the property of Jagex LTD.\n\nThis unofficial (3rd party) application is NOT Created or Maintained by Jagex LTD.</string>
+    <string name="app_CompanionAppTitle_String">Companion App</string>
+    <string name="app_SolomonsTitle_String">Solomon\'s Prices</string>
+    <string name="app_Logout_String">Logout</string>
+    <string name="app_GoogleAuthenticator_String">Google Authenticator</string>
+    <string name="app_CharacterInformationTitle_String">Player Information</string>
+    <string name="app_CharacterRSSFeedTitle_String">Player Activity</string>
+    <string name="app_RecentRS3NewsRSSFeedTitle_String">Recent RS3 News</string>
+    <string name="app_RecentOSRSNewsRSSFeedTitle_String">Recent OSRS News</string>
+</resources>

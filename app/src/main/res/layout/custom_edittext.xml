@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:inputType="text"
+    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_ "
+    android:maxLength="12"
+    android:maxLines="1"
+    android:hint=""
+    android:textColor="@color/colorOrange"
+    android:textColorPrimary="@color/colorOrange"
+    android:textColorSecondary="@color/colorOrange"
+    android:id="@+id/app_CustomEditText">
+
+</EditText>
