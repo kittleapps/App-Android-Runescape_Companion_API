@@ -316,7 +316,11 @@ public class MainActivity extends AppCompatActivity
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
                 // Check for Data on url loading to set labels
+
                 if (!url.contains("app_add.ws") && !url.contains("comapp.ws")) {
+
+                    //do NOT show the companion url's due to the c= flag;
+
                     urlBar.setText(url);
                 }
                 String page = browser.getUrl().toLowerCase().replace("http://", "").replace("https://", "");
@@ -366,12 +370,12 @@ public class MainActivity extends AppCompatActivity
                     browser.setVisibility(View.INVISIBLE);
                     lists.setVisibility(View.VISIBLE);
                 }
-                if (page.startsWith("secure.runescape.com/m=mtxn_rs_shop/api/shop?version=")) {
+                if (page.startsWith("secure.runescape.com/m=mtxn_rs_shop/api/config?")) {
 
                     // Solomon's Version Information Loaded. Change Label to Reflect This.
                     // Change Visibility to Reflect the Login Page Possibly Needing Shown.
 
-                    DisplayLabel.setText("Parsing Current Solomon's General Version Information..");
+                    DisplayLabel.setText("Parsing Current Solomon's General Store's version information..");
                     browser.setVisibility(View.INVISIBLE);
                     lists.setVisibility(View.VISIBLE);
                 }
@@ -382,7 +386,7 @@ public class MainActivity extends AppCompatActivity
                     // Set the Label Manually. Users would be on the official page to reach this step regardless.
                     // Change Visibility to Reflect the Login Page Possibly Needing Shown.
 
-                    DisplayLabel.setText("Welcome to the Internal Companion app!");
+                    DisplayLabel.setText("Welcome to the Internal RuneScape Companion app!");
                     urlBar.setText("http://runescape.com/companion/app_add.ws (c= Flag Hidden)");
                     browser.setVisibility(View.VISIBLE);
                     lists.setVisibility(View.INVISIBLE);
@@ -413,7 +417,7 @@ public class MainActivity extends AppCompatActivity
 
         // Load Labels Here
 
-        DisplayLabel.setText("Welcome To the Unofficial Runescape API!");
+        DisplayLabel.setText("Welcome To the Unofficial RuneScape API!");
         urlBar.setText("This 3RD party application was made by Sudo Bash.");
 
         // End Main Thread Load
@@ -439,10 +443,10 @@ public class MainActivity extends AppCompatActivity
 
                             // Granted Permission to load the internal WebView for the companion app
 
-                            Toast.makeText(CONTEXT, "Loading the internal RuneScape Companion App", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CONTEXT, "Loading the internal RuneScape Companion app.", Toast.LENGTH_SHORT).show();
                             try {
 
-                                DisplayLabel.setText("Loading the Runescape Companion App..");
+                                DisplayLabel.setText("Loading the RuneScape Companion App..");
                                 adapter.clear();
                                 adapter.notifyDataSetChanged();
                                 ToggleViews("Browser", "http://www.runescape.com/companion");
@@ -469,7 +473,7 @@ public class MainActivity extends AppCompatActivity
 
                                                     // User had the Companion App, launch it.
 
-                                                    Toast.makeText(CONTEXT, "Launching the Official RuneScape Companion App.", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(CONTEXT, "Launching the official RuneScape Companion app.", Toast.LENGTH_LONG).show();
                                                     startActivity(launchIntent);
                                                 }
                                             } else {
@@ -477,15 +481,15 @@ public class MainActivity extends AppCompatActivity
 
                                                     // User didn't have the Companion App, launch Google Play to download it.
 
-                                                    Toast.makeText(CONTEXT, "No RuneScape Companion app Installed? Do you Know WHAT this Means!?..", Toast.LENGTH_LONG).show();
-                                                    Toast.makeText(CONTEXT, "Launching Google Play to Download the Official App!", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(CONTEXT, "No RuneScape Companion app installed? Do you know WHAT this Means!?..", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(CONTEXT, "Launching Google Play to download the official app!", Toast.LENGTH_SHORT).show();
                                                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.jagex.RSCompanion")));
                                                 } catch (android.content.ActivityNotFoundException nope) {
 
                                                     // User didn't have the Companion App, nor Google Play. Loading Google Play's website to be safe.
 
-                                                    Toast.makeText(CONTEXT, "Nope.. Never mind.. No Google Play installed..", Toast.LENGTH_LONG).show();
-                                                    Toast.makeText(CONTEXT, "Launching Google Play's WEBSITE to Download the Offical App..", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(CONTEXT, "Nope.. Never mind.. No Google Play app is installed..", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(CONTEXT, "Launching Google Play's WEBSITE to download the official app..", Toast.LENGTH_SHORT).show();
                                                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.jagex.RSCompanion")));
                                                 }
                                             }
@@ -500,8 +504,8 @@ public class MainActivity extends AppCompatActivity
                                 }
                             };
 
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext(), R.style.OrangeDialogStyle);
-                            builder.setMessage("Do you want to launch the Official RuneScape Companion app?").setPositiveButton("Yes.", dialogClickListener)
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.CONTEXT, R.style.OrangeDialogStyle);
+                            builder.setMessage("Do you want to launch the official RuneScape Companion app?").setPositiveButton("Yes.", dialogClickListener)
                                     .setNegativeButton("No.", dialogClickListener).show();
                             break;
                     }
@@ -509,7 +513,7 @@ public class MainActivity extends AppCompatActivity
             };
             MainActivity.CONTEXT = this;
             AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
-            builder.setMessage("Do you want to load the internal RuneScape Companion app?\n\nPlease Note, this will require being logged into Jagex's Website, which will load in a WebView browser.\n\nIf you are not comfortable with this, Please hit \"No.\" below to attempt to load the Official app.").setPositiveButton("Yes.", dialogClickListener)
+            builder.setMessage("Do you want to load the internal RuneScape Companion app?\n\nPlease Note: this will require being logged into Jagex's website, which will load in a WebView browser.\n\nIf you are not comfortable with this, Please hit \"No.\" below to attempt to load the Official app.").setPositiveButton("Yes.", dialogClickListener)
                     .setNegativeButton("No.", dialogClickListener).show();
         } else if (id == R.id.nav_Solomons) {
 
@@ -549,7 +553,7 @@ public class MainActivity extends AppCompatActivity
             };
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
-            builder.setMessage("Do you want to load Solomon's General Store's Data?\n\nPlease Note, this will require being logged into Jagex's Website, which will load in a WebView browser.\n\nIf you are not comfortable with this, Please hit \"No.\" below.").setPositiveButton("Yes.", dialogClickListener)
+            builder.setMessage("Do you want to load Solomon's General Store's data?\n\nPlease Note: this will require being logged into Jagex's website, which will load in a WebView browser.\n\nIf you are not comfortable with this, Please hit \"No.\" below.").setPositiveButton("Yes.", dialogClickListener)
                     .setNegativeButton("No.", dialogClickListener).show();
         } else if (id == R.id.nav_CharacterInformation) {
 
@@ -560,7 +564,7 @@ public class MainActivity extends AppCompatActivity
             final EditText playerToUse = (EditText) dialog.findViewById(R.id.app_CustomEditText);
             AlertDialog.Builder ad = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
             ad.setTitle("Enter a Character Name");
-            ad.setMessage("This will grab information about the player. This includes their Skill Levels, Experience, Ranks, Current title and clan name if any.");
+            ad.setMessage("This will grab information about the player. This includes their skill levels, experience, rankings, current title and clan name if any.");
             ad.setView(dialog);
             ad.setPositiveButton("Get Data!", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
@@ -596,7 +600,7 @@ public class MainActivity extends AppCompatActivity
             final EditText playerToUse = (EditText) dialog.findViewById(R.id.app_CustomEditText);
             AlertDialog.Builder ad = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
             ad.setTitle("Enter a Character Name");
-            ad.setMessage("This will grab information about the player's Recent RS3 Activity.");
+            ad.setMessage("This will grab information about the player's recent RS3 Activity.");
             ad.setView(dialog);
             ad.setPositiveButton("Get Data!", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
@@ -632,7 +636,7 @@ public class MainActivity extends AppCompatActivity
                         e.printStackTrace();
                     } catch (FileNotFoundException e){
                         String[] Phrases = new String[1];
-                        Phrases[0] = "This Characters information does not exist.";
+                        Phrases[0] = "This players's information does not exist, or is not able to be read.";
                         list = new LinkedList(asList(Phrases));
                         adapter = new ArrayAdapter<>(CONTEXT, R.layout.custom_listview, list);
                         lists.setAdapter(adapter);
@@ -655,98 +659,137 @@ public class MainActivity extends AppCompatActivity
             });
             ad.show();
         } else if (id == R.id.nav_RecentRS3NewsRSSFeed) {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which) {
+                        case DialogInterface.BUTTON_POSITIVE:
+                            // Set Visibilities
 
-            // Set Visibilities
+                            CharacterAvatar.setVisibility(View.GONE);
+                            browser.setVisibility(View.INVISIBLE);
+                            lists.setVisibility(View.VISIBLE);
 
-            CharacterAvatar.setVisibility(View.GONE);
-            browser.setVisibility(View.INVISIBLE);
-            lists.setVisibility(View.VISIBLE);
+                            // Internet-related crash fix..
 
-            // Internet-related crash fix..
+                            if (android.os.Build.VERSION.SDK_INT > 9) {
+                                StrictMode.ThreadPolicy policy =
+                                        new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                                StrictMode.setThreadPolicy(policy);
+                            }
+                            try {
 
-            if (android.os.Build.VERSION.SDK_INT > 9) {
-                StrictMode.ThreadPolicy policy =
-                        new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
-            }
-            try {
+                                // Load the RSS Feed
 
-                // Load the RSS Feed
+                                URL url = new URL("http://services.runescape.com/m=news/latest_news.rss");
+                                RssFeed feed = RssReader.read(url);
+                                ArrayList<RssItem> rssItems = feed.getRssItems();
+                                String[] values = new String[rssItems.size() + 2];
+                                values[0] = "Data From: "+url.toString();
+                                values[1] = "";
+                                DisplayLabel.setText("Recent RS3 News");
+                                urlBar.setText(url.toString());
 
-                URL url = new URL("http://services.runescape.com/m=news/latest_news.rss");
-                RssFeed feed = RssReader.read(url);
-                ArrayList<RssItem> rssItems = feed.getRssItems();
-                String[] values = new String[rssItems.size() + 2];
-                values[0] = "Data From: "+url.toString();
-                values[1] = "";
-                DisplayLabel.setText("Recent RS3 News");
-                urlBar.setText(url.toString());
+                                // Parse the Data
 
-                // Parse the Data
+                                int ListCounter = 2;
+                                for (RssItem rssItem : rssItems) {
+                                    values[ListCounter] = "[ " + rssItem.getTitle() + " ]" + rssItem.getDescription().replace("\t", "") + "See More Information at: " + rssItem.getLink() + "\n";
+                                    ListCounter += 1;
+                                }
 
-                int ListCounter = 2;
-                for (RssItem rssItem : rssItems) {
-                    values[ListCounter] = "[ " + rssItem.getTitle() + " ]" + rssItem.getDescription().replace("\t", "") + "See More Information at: " + rssItem.getLink() + "\n";
-                    ListCounter += 1;
+                                // Display the Data
+
+                                list = new LinkedList(asList(values));
+                                adapter = new ArrayAdapter<String>(CONTEXT, R.layout.custom_listview, list);
+                                lists.setAdapter(adapter);
+
+                            } catch (SAXException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+
+                            // Denied Permission to load the information, Abort Process.
+
+                            Toast.makeText(CONTEXT, "Operation Aborted.", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
+            };
 
-                // Display the Data
-
-                list = new LinkedList(asList(values));
-                adapter = new ArrayAdapter<String>(CONTEXT, R.layout.custom_listview, list);
-                lists.setAdapter(adapter);
-
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
+            builder.setMessage("Do you want to load RuneScape's Recent news RSS Feed?").setPositiveButton("Yes.", dialogClickListener)
+                    .setNegativeButton("No.", dialogClickListener).show();
         } else if (id == R.id.nav_RecentOSRSNewsRSSFeed) {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which) {
+                        case DialogInterface.BUTTON_POSITIVE:
 
-            // Set Visibility
+                            // Set Visibility
 
-            CharacterAvatar.setVisibility(View.GONE);
-            browser.setVisibility(View.INVISIBLE);
-            lists.setVisibility(View.VISIBLE);
+                            CharacterAvatar.setVisibility(View.GONE);
+                            browser.setVisibility(View.INVISIBLE);
+                            lists.setVisibility(View.VISIBLE);
 
-            // Internat-Related Crash fix..
+                            // Internat-Related Crash fix..
 
-            if (android.os.Build.VERSION.SDK_INT > 9) {
-                StrictMode.ThreadPolicy policy =
-                        new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
-            }
-            try {
+                            if (android.os.Build.VERSION.SDK_INT > 9) {
+                                StrictMode.ThreadPolicy policy =
+                                        new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                                StrictMode.setThreadPolicy(policy);
+                            }
+                            try {
 
-                // Load the RSS Feed
+                                // Load the RSS Feed
 
-                URL url = new URL("http://services.runescape.com/m=news/latest_news.rss?oldschool=true");
-                RssFeed feed = RssReader.read(url);
-                ArrayList<RssItem> rssItems = feed.getRssItems();
-                String[] values = new String[rssItems.size() + 2];
-                values[0] = "Data From: "+url.toString();
-                values[1] = "";
-                DisplayLabel.setText("Recent OSRS News");
-                urlBar.setText(url.toString());
+                                URL url = new URL("http://services.runescape.com/m=news/latest_news.rss?oldschool=true");
+                                RssFeed feed = RssReader.read(url);
+                                ArrayList<RssItem> rssItems = feed.getRssItems();
+                                String[] values = new String[rssItems.size() + 2];
+                                values[0] = "Data From: "+url.toString();
+                                values[1] = "";
+                                DisplayLabel.setText("Recent OSRS News");
+                                urlBar.setText(url.toString());
 
-                // Parse the Data
+                                // Parse the Data
 
-                int ListCounter = 2;
-                for (RssItem rssItem : rssItems) {
-                    values[ListCounter] = "[ " + rssItem.getTitle() + " ]" + rssItem.getDescription().replace("\t", "") + "See More Information at: " + rssItem.getLink() + "\n";
-                    ListCounter += 1;
+                                int ListCounter = 2;
+                                for (RssItem rssItem : rssItems) {
+                                    values[ListCounter] = "[ " + rssItem.getTitle() + " ]" + rssItem.getDescription().replace("\t", "") + "See More Information at: " + rssItem.getLink() + "\n";
+                                    ListCounter += 1;
+                                }
+
+                                // Display the Data
+
+                                list = new LinkedList(asList(values));
+                                adapter = new ArrayAdapter<>(CONTEXT, R.layout.custom_listview, list);
+                                lists.setAdapter(adapter);
+                            } catch (SAXException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+
+                            // Denied Permission to load the information, Abort Process.
+
+                            Toast.makeText(CONTEXT, "Operation Aborted.", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
+            };
 
-                // Display the Data
-
-                list = new LinkedList(asList(values));
-                adapter = new ArrayAdapter<>(CONTEXT, R.layout.custom_listview, list);
-                lists.setAdapter(adapter);
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
+            builder.setMessage("Do you want to load OldSchool RuneScape's recent news RSS feed?").setPositiveButton("Yes.", dialogClickListener)
+                    .setNegativeButton("No.", dialogClickListener).show();
         } else if (id == R.id.nav_GoogleAuthenticator) {
 
             // Google Auth was selected
@@ -765,7 +808,7 @@ public class MainActivity extends AppCompatActivity
 
                                     // User had the Google Authenticator App, launch it.
 
-                                    Toast.makeText(CONTEXT, "Launching Google Authenticator", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CONTEXT, "Launching Google's Authenticator.", Toast.LENGTH_LONG).show();
                                     startActivity(launchIntent);
                                 }
                             } else {
@@ -773,15 +816,15 @@ public class MainActivity extends AppCompatActivity
 
                                     // User didn't have the Google Authenticator App, launch Google Play to download it.
 
-                                    Toast.makeText(CONTEXT, "No Authenticator Installed? Do you Know WHAT this Means!?..", Toast.LENGTH_LONG).show();
-                                    Toast.makeText(CONTEXT, "Launching Google Play to Download the Authenticator.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CONTEXT, "No Authenticator installed? Do you Know WHAT this Means!?..", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CONTEXT, "Launching Google Play to download the Authenticator.", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.apps.authenticator2")));
                                 } catch (android.content.ActivityNotFoundException nope) {
 
                                     // User didn't have the Google Authenticator App, nor Google Play. Loading Google Play's website to be safe.
 
-                                    Toast.makeText(CONTEXT, "Nope.. Never mind.. No Google Play installed..", Toast.LENGTH_LONG).show();
-                                    Toast.makeText(CONTEXT, "Launching Google Play's WEBSITE to Download the Authenticator..", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CONTEXT, "Nope.. Never mind.. No Google Play app is installed..", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CONTEXT, "Launching Google Play's WEBSITE to attempt to download the Google Authenticator..", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2")));
                                 }
                             }
@@ -798,8 +841,8 @@ public class MainActivity extends AppCompatActivity
             };
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.OrangeDialogStyle);
-            builder.setMessage("Do you want to Launch the Authenticator?").setPositiveButton("Launch!", dialogClickListener)
-                    .setNegativeButton("Abort!", dialogClickListener).show();
+            builder.setMessage("Do you want to launch the Google Authenticator?").setPositiveButton("Yes", dialogClickListener)
+                    .setNegativeButton("No", dialogClickListener).show();
         }  else if (id == R.id.nav_Logout) {
 
             // Logout was Selected, Kill all Data in the WebView (Minor Added Security), Close App
@@ -931,7 +974,7 @@ public class MainActivity extends AppCompatActivity
 
         // Stop back presses, encourage using "Logout" to delete webview data.
 
-        Toast.makeText(CONTEXT, "Please use the \"Logout\" Button to close this application\n\nIt's added to clear some databases for added security.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(CONTEXT, "Please use the \"Logout\" button to close this application\n\nIt's added to clear the WebView's caches for some added security.", Toast.LENGTH_SHORT).show();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START); // closes the drawer if open
