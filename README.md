@@ -10,16 +10,19 @@ Sloppy Code used for Testing+Distributions see ReadMe for more intormation.
 
 **Basics of this program so far**:
 
-* Gives access to an Internal RuneScape Companion (With Options to load the offical application), this also has NO push notifications as it would have to access a part of their servers i was told NO to. (This mechanic runs on a WebView Browser which is reliant to your Android Rom at times for stability)
-* Gives access to Player's Skill Levels, Experience, and Ranking (if they're not ranked in a Skill, there's no info to read) this also includes their Title, Clan, if their clan is recruiting, and Downloading their Characters RuneMetrics Avatar.
+* Gives access to an Internal RuneScape Companion (With Options to load the offical application), this also has NO push notifications as it would have to access a part of their servers. (This mechanic runs on a WebView Browser which is reliant to your Android Rom at times for stability)
 * Gives access to Solomon's General Stores price viewing, this requires login information, thus why this application is Open-Sourced. This information shows your charcacters current Runecoins, Loyalty Points, Membership total used, Current Membership Streak, your next Loyalty Point payout ETA estimated from the datas loading time, and the prices of Solomon's goods including if you own them or not for One-Time-Purchase goods.
+* Gives access to Player's Skill Levels, Experience, and Ranking (if they're not ranked in a Skill, there's no info to read) this also includes their Title, Clan, if their clan is recruiting, and Downloading their Characters RuneMetrics Avatar.
 * Gives access to a Characters recent activities (Via RSS), this is reliant on their privacy settings and may not show some or any information based on that. (if tyhey have no info, it will display as such)
 * Gives access to the Main and OldSchool Runescape's news feed's most recent entries (Via RSS) with Hyperlinks to load in your browser to view more information.
 * Gives a shortcut to load the Google Authenticator (or Offer to Download it from Google Play) for the Internal RuneScape Companion function.
 
-**To-Do**:
+**TO-DO**:
 
 * Cleanups (it really needs it..)
-* Better Theming (Soem android versions show dark text on dark backgrounds)
+* Better Theming (Some android versions show dark text on dark backgrounds)
 * Reduce Overdrawing (currently all the app does 4+ layers..)
 * More Mechanics as I think of them.
+* Redirect from unused webpages to about:blank
+* Stability Fixes
+* Returning to the app should* come back to the initial page's view.. will need to look into this.
